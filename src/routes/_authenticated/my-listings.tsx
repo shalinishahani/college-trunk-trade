@@ -34,7 +34,7 @@ export const Route = createFileRoute("/_authenticated/my-listings")({
   component: MyListings,
 });
 
-function Thumb({ path, alt }: { path?: string; alt: string }) {
+function Thumb({ path, alt }: { path?: string | undefined; alt: string }) {
   const [src, setSrc] = useState<string | null>(null);
   useEffect(() => {
     void resolveImage(path).then(setSrc);
@@ -75,14 +75,20 @@ function MyListings() {
   const markSold = async (id: string, status: string) => {
     const next = status === "sold" ? "available" : "sold";
     const { error } = await supabase.from("products").update({ status: next as never }).eq("id", id);
-    if (error) return toast.error(error.message);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
     toast.success(next === "sold" ? "Marked as sold" : "Relisted");
     refresh();
   };
 
   const remove = async (id: string) => {
     const { error } = await supabase.from("products").delete().eq("id", id);
-    if (error) return toast.error(error.message);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
     toast.success("Listing deleted");
     refresh();
   };
