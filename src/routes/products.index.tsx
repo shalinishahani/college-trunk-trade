@@ -20,13 +20,14 @@ import { useWishlist } from "@/hooks/useWishlist";
 import { CATEGORIES, CONDITIONS } from "@/lib/marketplace";
 
 type ProductSearch = {
-  q?: string;
-  category?: string;
-  condition?: string;
-  min?: number;
-  max?: number;
-  sort?: "newest" | "price_asc" | "price_desc";
+  q?: string | undefined;
+  category?: string | undefined;
+  condition?: string | undefined;
+  min?: number | undefined;
+  max?: number | undefined;
+  sort?: "newest" | "price_asc" | "price_desc" | undefined;
 };
+
 
 export const Route = createFileRoute("/products/")({
   validateSearch: (search: Record<string, unknown>): ProductSearch => ({
