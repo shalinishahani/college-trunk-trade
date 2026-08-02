@@ -1,0 +1,1 @@
+CREATE POLICY "Public can view listing images" ON storage.objects FOR SELECT TO anon USING (bucket_id = 'listings');
