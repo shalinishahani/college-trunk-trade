@@ -16,6 +16,7 @@ import { Route as AuthenticatedDashboardRouteImport } from './routes/_authentica
 import { Route as AuthenticatedMessagesRouteImport } from './routes/_authenticated/messages'
 import { Route as AuthenticatedMyListingsRouteImport } from './routes/_authenticated/my-listings'
 import { Route as AuthenticatedNotificationsRouteImport } from './routes/_authenticated/notifications'
+import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 import { Route as AuthenticatedSellRouteImport } from './routes/_authenticated/sell'
 import { Route as AuthenticatedWishlistRouteImport } from './routes/_authenticated/wishlist'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
@@ -56,6 +57,11 @@ const AuthenticatedNotificationsRoute =
     path: '/notifications',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedSellRoute = AuthenticatedSellRouteImport.update({
   id: '/sell',
   path: '/sell',
@@ -84,6 +90,7 @@ export interface FileRoutesByFullPath {
   '/messages': typeof AuthenticatedMessagesRoute
   '/my-listings': typeof AuthenticatedMyListingsRoute
   '/notifications': typeof AuthenticatedNotificationsRoute
+  '/profile': typeof AuthenticatedProfileRoute
   '/sell': typeof AuthenticatedSellRoute
   '/wishlist': typeof AuthenticatedWishlistRoute
   '/products/$productId': typeof ProductsProductIdRoute
@@ -96,6 +103,7 @@ export interface FileRoutesByTo {
   '/messages': typeof AuthenticatedMessagesRoute
   '/my-listings': typeof AuthenticatedMyListingsRoute
   '/notifications': typeof AuthenticatedNotificationsRoute
+  '/profile': typeof AuthenticatedProfileRoute
   '/sell': typeof AuthenticatedSellRoute
   '/wishlist': typeof AuthenticatedWishlistRoute
   '/products/$productId': typeof ProductsProductIdRoute
@@ -110,6 +118,7 @@ export interface FileRoutesById {
   '/_authenticated/messages': typeof AuthenticatedMessagesRoute
   '/_authenticated/my-listings': typeof AuthenticatedMyListingsRoute
   '/_authenticated/notifications': typeof AuthenticatedNotificationsRoute
+  '/_authenticated/profile': typeof AuthenticatedProfileRoute
   '/_authenticated/sell': typeof AuthenticatedSellRoute
   '/_authenticated/wishlist': typeof AuthenticatedWishlistRoute
   '/products/$productId': typeof ProductsProductIdRoute
@@ -124,6 +133,7 @@ export interface FileRouteTypes {
     | '/messages'
     | '/my-listings'
     | '/notifications'
+    | '/profile'
     | '/sell'
     | '/wishlist'
     | '/products/$productId'
@@ -136,6 +146,7 @@ export interface FileRouteTypes {
     | '/messages'
     | '/my-listings'
     | '/notifications'
+    | '/profile'
     | '/sell'
     | '/wishlist'
     | '/products/$productId'
@@ -149,6 +160,7 @@ export interface FileRouteTypes {
     | '/_authenticated/messages'
     | '/_authenticated/my-listings'
     | '/_authenticated/notifications'
+    | '/_authenticated/profile'
     | '/_authenticated/sell'
     | '/_authenticated/wishlist'
     | '/products/$productId'
@@ -214,6 +226,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedNotificationsRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/profile': {
+      id: '/_authenticated/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof AuthenticatedProfileRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/sell': {
       id: '/_authenticated/sell'
       path: '/sell'
@@ -250,6 +269,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedMessagesRoute: typeof AuthenticatedMessagesRoute
   AuthenticatedMyListingsRoute: typeof AuthenticatedMyListingsRoute
   AuthenticatedNotificationsRoute: typeof AuthenticatedNotificationsRoute
+  AuthenticatedProfileRoute: typeof AuthenticatedProfileRoute
   AuthenticatedSellRoute: typeof AuthenticatedSellRoute
   AuthenticatedWishlistRoute: typeof AuthenticatedWishlistRoute
 }
@@ -259,6 +279,7 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedMessagesRoute: AuthenticatedMessagesRoute,
   AuthenticatedMyListingsRoute: AuthenticatedMyListingsRoute,
   AuthenticatedNotificationsRoute: AuthenticatedNotificationsRoute,
+  AuthenticatedProfileRoute: AuthenticatedProfileRoute,
   AuthenticatedSellRoute: AuthenticatedSellRoute,
   AuthenticatedWishlistRoute: AuthenticatedWishlistRoute,
 }
