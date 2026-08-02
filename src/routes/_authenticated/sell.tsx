@@ -60,10 +60,22 @@ function SellPage() {
     const description = String(form.get("description")).trim();
     const price = Number(form.get("price"));
 
-    if (!title || title.length > 120) return toast.error("Add a title under 120 characters");
-    if (!description) return toast.error("Add a short description");
-    if (!Number.isFinite(price) || price < 0) return toast.error("Enter a valid price");
-    if (files.length === 0) return toast.error("Add at least one photo");
+    if (!title || title.length > 120) {
+      toast.error("Add a title under 120 characters");
+      return;
+    }
+    if (!description) {
+      toast.error("Add a short description");
+      return;
+    }
+    if (!Number.isFinite(price) || price < 0) {
+      toast.error("Enter a valid price");
+      return;
+    }
+    if (files.length === 0) {
+      toast.error("Add at least one photo");
+      return;
+    }
 
     setSaving(true);
     try {
