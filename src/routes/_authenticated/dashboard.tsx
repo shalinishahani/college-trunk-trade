@@ -33,7 +33,7 @@ function Dashboard() {
           .from("messages")
           .select("id", { count: "exact", head: true })
           .eq("receiver_id", user!.id)
-          .eq("read", false),
+          .eq("is_read", false),
       ]);
       const rows = listings.data ?? [];
       return {
