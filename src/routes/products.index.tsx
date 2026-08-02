@@ -65,7 +65,8 @@ function ProductsPage() {
   const [term, setTerm] = useState(search.q ?? "");
 
   const setSearch = (patch: Partial<ProductSearch>) =>
-    navigate({ search: (prev) => ({ ...prev, ...patch }) });
+    navigate({ search: (prev: ProductSearch) => ({ ...prev, ...patch }) });
+
 
   const { data, isLoading } = useQuery({
     queryKey: ["products", search],
