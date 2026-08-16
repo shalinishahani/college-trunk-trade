@@ -27,12 +27,12 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/products/$productId")({
   head: () => ({
     meta: [
-      { title: "Listing details — Campus Marketplace" },
+      { title: "Listing details — CampusXchange" },
       {
         name: "description",
-        content: "View listing photos, condition, price and seller details on Campus Marketplace.",
+        content: "View listing photos, condition, price and seller details on CampusXchange.",
       },
-      { property: "og:title", content: "Listing details — Campus Marketplace" },
+      { property: "og:title", content: "Listing details — CampusXchange" },
       {
         property: "og:description",
         content: "See photos, price and seller info, then message the student directly.",
@@ -77,7 +77,7 @@ function ProductDetail() {
   const startChat = async () => {
     if (!user) {
       toast.error("Sign in to message the seller");
-      navigate({ to: "/auth" });
+      navigate({ to: "/auth", search: { mode: "login" } });
       return;
     }
     navigate({ to: "/messages", search: { with: seller?.id, product: productId } });

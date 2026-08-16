@@ -10,13 +10,13 @@ import { Textarea } from "@/components/ui/textarea";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Campus Marketplace" },
+      { title: "Contact — CampusXchange" },
       {
         name: "description",
-        content: "Questions, feedback or a listing to report? Reach the Campus Marketplace team.",
+        content: "Questions, feedback or a listing to report? Reach the CampusXchange team.",
       },
-      { property: "og:title", content: "Contact — Campus Marketplace" },
-      { property: "og:description", content: "Get in touch with the Campus Marketplace team." },
+      { property: "og:title", content: "Contact — CampusXchange" },
+      { property: "og:description", content: "Get in touch with the CampusXchange team." },
     ],
   }),
   component: Contact,

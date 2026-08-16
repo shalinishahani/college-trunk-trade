@@ -11,9 +11,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/_authenticated/notifications")({
   head: () => ({
     meta: [
-      { title: "Notifications — Campus Marketplace" },
+      { title: "Notifications — CampusXchange" },
       { name: "description", content: "Updates on your messages, wishlist activity and listings." },
-      { property: "og:title", content: "Notifications — Campus Marketplace" },
+      { property: "og:title", content: "Notifications — CampusXchange" },
       { property: "og:description", content: "Never miss a buyer message or wishlist alert." },
     ],
   }),

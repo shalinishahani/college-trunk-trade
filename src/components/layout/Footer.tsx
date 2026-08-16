@@ -11,7 +11,7 @@ export function Footer() {
               <Package className="size-5" />
             </span>
             <span className="font-display text-lg font-extrabold">
-              Campus<span className="gradient-text">Market</span>
+              Campus<span className="gradient-text">Xchange</span>
             </span>
           </div>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
@@ -61,7 +61,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t py-6 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Campus Marketplace. Built for students, by students.
+        © {new Date().getFullYear()} CampusXchange. Built for students, by students.
       </div>
     </footer>
   );

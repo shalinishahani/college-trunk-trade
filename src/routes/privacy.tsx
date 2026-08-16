@@ -4,12 +4,12 @@ import { Card } from "@/components/ui/card";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — Campus Marketplace" },
+      { title: "Privacy Policy — CampusXchange" },
       {
         name: "description",
-        content: "How Campus Marketplace collects, uses and protects your student account data.",
+        content: "How CampusXchange collects, uses and protects your student account data.",
       },
-      { property: "og:title", content: "Privacy Policy — Campus Marketplace" },
+      { property: "og:title", content: "Privacy Policy — CampusXchange" },
       { property: "og:description", content: "Our approach to student data, listings and messages." },
     ],
   }),

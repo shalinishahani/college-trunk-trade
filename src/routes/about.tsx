@@ -6,13 +6,13 @@ import { Card } from "@/components/ui/card";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Campus Marketplace" },
+      { title: "About — CampusXchange" },
       {
         name: "description",
         content:
-          "Why Campus Marketplace exists: an affordable, sustainable, student-only way to trade what you need on campus.",
+          "Why CampusXchange exists: an affordable, sustainable, student-only way to trade what you need on campus.",
       },
-      { property: "og:title", content: "About — Campus Marketplace" },
+      { property: "og:title", content: "About — CampusXchange" },
       {
         property: "og:description",
         content: "A student-only marketplace built around affordability, trust and sustainability.",
@@ -37,7 +37,7 @@ function About() {
       </h1>
       <p className="mt-5 text-lg text-muted-foreground">
         Every semester students throw away or overpay for things another student a hostel block away
-        already has. Campus Marketplace closes that gap — a simple place to list what you no longer
+        already has. CampusXchange closes that gap — a simple place to list what you no longer
         need and find what you do, without shipping, fees or strangers.
       </p>
 

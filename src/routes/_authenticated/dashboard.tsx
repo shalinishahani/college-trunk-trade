@@ -10,9 +10,9 @@ import { formatPrice } from "@/lib/marketplace";
 export const Route = createFileRoute("/_authenticated/dashboard")({
   head: () => ({
     meta: [
-      { title: "Dashboard — Campus Marketplace" },
+      { title: "Dashboard — CampusXchange" },
       { name: "description", content: "Track your listings, wishlist, messages and campus activity." },
-      { property: "og:title", content: "Dashboard — Campus Marketplace" },
+      { property: "og:title", content: "Dashboard — CampusXchange" },
       { property: "og:description", content: "Your listings, saved items and messages in one place." },
     ],
   }),

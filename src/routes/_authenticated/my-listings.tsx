@@ -25,9 +25,9 @@ import { resolveImage } from "@/lib/storage";
 export const Route = createFileRoute("/_authenticated/my-listings")({
   head: () => ({
     meta: [
-      { title: "My listings — Campus Marketplace" },
+      { title: "My listings — CampusXchange" },
       { name: "description", content: "Edit, mark as sold or remove the items you're selling." },
-      { property: "og:title", content: "My listings — Campus Marketplace" },
+      { property: "og:title", content: "My listings — CampusXchange" },
       { property: "og:description", content: "Manage everything you have up for sale on campus." },
     ],
   }),

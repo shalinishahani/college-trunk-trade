@@ -1,12 +1,10 @@
-# Campus Connect
+# CampusXchange
 
-Project Title
-
-Campus Marketplace – Student Buy, Sell & Exchange Platform
+CampusXchange – Student Buy, Sell & Exchange Platform
 
 Overview
 
-Build a complete, modern, production-ready web application called Campus Marketplace.
+Build a complete, modern, production-ready web application called CampusXchange.
 
 The application is designed exclusively for college students to buy, sell, and exchange academic and personal items within their campus.
 
@@ -493,15 +491,7 @@ Keep the code well organized and scalable.
 
 The application should be fully responsive and ready for deployment.
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/475822b9-63a5-4fd0-8de6-0d37f91bed9e).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+This project is **CampusXchange**.
 
 ## Development
 

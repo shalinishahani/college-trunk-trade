@@ -41,13 +41,13 @@ export const Route = createFileRoute("/products/")({
   }),
   head: () => ({
     meta: [
-      { title: "Browse Listings — Campus Marketplace" },
+      { title: "Browse Listings — CampusXchange" },
       {
         name: "description",
         content:
           "Search and filter student listings by category, price and condition — books, laptops, cycles and more.",
       },
-      { property: "og:title", content: "Browse Listings — Campus Marketplace" },
+      { property: "og:title", content: "Browse Listings — CampusXchange" },
       {
         property: "og:description",
         content: "Find affordable second-hand student essentials on your campus.",
@@ -59,13 +59,13 @@ export const Route = createFileRoute("/products/")({
 
 function ProductsPage() {
   const search = Route.useSearch();
-  const navigate = useNavigate({ from: "/products" });
+  const navigate = useNavigate({ from: "/products/" });
   const { wishlistIds, toggleWishlist } = useWishlist();
   const [showFilters, setShowFilters] = useState(false);
   const [term, setTerm] = useState(search.q ?? "");
 
   const setSearch = (patch: Partial<ProductSearch>) =>
-    navigate({ search: (prev: ProductSearch) => ({ ...prev, ...patch }) });
+    navigate({ search: ((prev: Record<string, unknown>) => ({ ...prev, ...patch })) as any });
 
 
   const { data, isLoading } = useQuery({
@@ -78,7 +78,11 @@ function ProductsPage() {
 
       if (search.q) query = query.or(`title.ilike.%${search.q}%,description.ilike.%${search.q}%`);
       if (search.category) query = query.eq("category", search.category);
-      if (search.condition) query = query.eq("condition", search.condition);
+      if (search.condition)
+        query = query.eq(
+          "condition",
+          search.condition as "new" | "like_new" | "good" | "fair" | "used",
+        );
       if (search.min !== undefined) query = query.gte("price", search.min);
       if (search.max !== undefined) query = query.lte("price", search.max);
 
@@ -214,7 +218,7 @@ function ProductsPage() {
               className="rounded-full"
               onClick={() => {
                 setTerm("");
-                navigate({ search: {} });
+                navigate({ search: {} as any });
               }}
             >
               <X className="size-4" /> Clear filters

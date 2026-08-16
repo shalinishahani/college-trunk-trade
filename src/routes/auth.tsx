@@ -17,12 +17,12 @@ export const Route = createFileRoute("/auth")({
   }),
   head: () => ({
     meta: [
-      { title: "Sign in — Campus Marketplace" },
+      { title: "Sign in — CampusXchange" },
       {
         name: "description",
-        content: "Create your student account or sign in to buy and sell on Campus Marketplace.",
+        content: "Create your student account or sign in to buy and sell on CampusXchange.",
       },
-      { property: "og:title", content: "Sign in — Campus Marketplace" },
+      { property: "og:title", content: "Sign in — CampusXchange" },
       { property: "og:description", content: "Join your campus marketplace in seconds." },
     ],
   }),
@@ -86,15 +86,37 @@ function AuthPage() {
   };
 
   const handleGoogle = async () => {
-    const result = await lovable.auth.signInWithOAuth("google", {
-      redirect_uri: window.location.origin,
-    });
-    if (result.error) {
-      toast.error("Google sign-in failed. Please try again.");
-      return;
+    try {
+      const result = await lovable.auth.signInWithOAuth("google", {
+        redirect_uri: window.location.origin,
+      });
+      if (result.error) {
+        console.warn("Lovable OAuth error, attempting direct Supabase OAuth:", result.error);
+        const { error } = await supabase.auth.signInWithOAuth({
+          provider: "google",
+          options: {
+            redirectTo: window.location.origin,
+          },
+        });
+        if (error) {
+          toast.error(error.message || "Google sign-in failed. Please check Google OAuth settings.");
+        }
+        return;
+      }
+      if (result.redirected) return;
+      navigate({ to: "/dashboard" });
+    } catch (err) {
+      console.error("Google sign-in exception:", err);
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: window.location.origin,
+        },
+      });
+      if (error) {
+        toast.error(error.message || "Google sign-in failed. Please try again.");
+      }
     }
-    if (result.redirected) return;
-    navigate({ to: "/dashboard" });
   };
 
   return (
@@ -104,7 +126,7 @@ function AuthPage() {
           <span className="gradient-brand grid size-12 place-items-center rounded-2xl text-primary-foreground">
             <Package className="size-6" />
           </span>
-          <h1 className="mt-4 font-display text-2xl font-bold">Campus Marketplace</h1>
+          <h1 className="mt-4 font-display text-2xl font-bold">CampusXchange</h1>
           <p className="mt-1 text-sm text-muted-foreground">
             Buy and sell with students from your college.
           </p>

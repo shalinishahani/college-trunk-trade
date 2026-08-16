@@ -85,11 +85,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Campus Marketplace — Student Buy, Sell & Exchange" },
+      { title: "CampusXchange — Student Buy, Sell & Exchange" },
       {
         name: "description",
         content:
-          "Campus Marketplace lets college students buy, sell and exchange books, electronics, hostel essentials and more within their campus.",
+          "CampusXchange lets college students buy, sell and exchange books, electronics, hostel essentials and more within their campus.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -102,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/campusxchange-icon.png", type: "image/png" },
     ],
   }),
   shellComponent: RootShell,

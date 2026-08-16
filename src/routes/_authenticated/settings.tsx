@@ -10,9 +10,9 @@ import { supabase } from "@/integrations/supabase/client";
 export const Route = createFileRoute("/_authenticated/settings")({
   head: () => ({
     meta: [
-      { title: "Settings — Campus Marketplace" },
+      { title: "Settings — CampusXchange" },
       { name: "description", content: "Manage your appearance, account and session settings." },
-      { property: "og:title", content: "Settings — Campus Marketplace" },
+      { property: "og:title", content: "Settings — CampusXchange" },
       { property: "og:description", content: "Control theme and account preferences." },
     ],
   }),
@@ -28,7 +28,7 @@ function SettingsPage() {
     await qc.cancelQueries();
     qc.clear();
     await signOut();
-    navigate({ to: "/auth", replace: true });
+    navigate({ to: "/auth", search: { mode: "login" }, replace: true });
   };
 
   const resetPassword = async () => {

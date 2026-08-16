@@ -10,9 +10,9 @@ import { ProductCard, ProductCardSkeleton, type ProductListItem } from "@/compon
 export const Route = createFileRoute("/_authenticated/wishlist")({
   head: () => ({
     meta: [
-      { title: "Wishlist — Campus Marketplace" },
+      { title: "Wishlist — CampusXchange" },
       { name: "description", content: "Every listing you've saved for later, in one place." },
-      { property: "og:title", content: "Wishlist — Campus Marketplace" },
+      { property: "og:title", content: "Wishlist — CampusXchange" },
       { property: "og:description", content: "Keep an eye on the campus deals you care about." },
     ],
   }),

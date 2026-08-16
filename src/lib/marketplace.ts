@@ -36,20 +36,11 @@ export const formatPrice = (value: number) =>
 
 export function timeAgo(iso: string) {
   const seconds = Math.floor((Date.now() - new Date(iso).getTime()) / 1000);
-  const units: [number, string][] = [
-    [60, "second"],
-    [3600, "minute"],
-    [86400, "hour"],
-    [604800, "day"],
-    [2592000, "week"],
-    [31536000, "month"],
-  ];
   if (seconds < 60) return "just now";
   if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
   if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
   if (seconds < 604800) return `${Math.floor(seconds / 86400)}d ago`;
   if (seconds < 2592000) return `${Math.floor(seconds / 604800)}w ago`;
-  void units;
   return new Date(iso).toLocaleDateString();
 }
 

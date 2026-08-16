@@ -16,9 +16,9 @@ import { resolveImage, uploadImage } from "@/lib/storage";
 export const Route = createFileRoute("/_authenticated/profile")({
   head: () => ({
     meta: [
-      { title: "Your profile — Campus Marketplace" },
+      { title: "Your profile — CampusXchange" },
       { name: "description", content: "Update your name, department, year, college and contact details." },
-      { property: "og:title", content: "Your profile — Campus Marketplace" },
+      { property: "og:title", content: "Your profile — CampusXchange" },
       { property: "og:description", content: "A complete profile helps buyers trust your listings." },
     ],
   }),

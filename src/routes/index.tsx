@@ -24,13 +24,13 @@ import heroImage from "@/assets/hero-campus.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Campus Marketplace — Buy, Sell & Exchange on Campus" },
+      { title: "CampusXchange — Buy, Sell & Exchange on Campus" },
       {
         name: "description",
         content:
           "A student-only marketplace to buy and sell books, laptops, cycles and hostel essentials safely within your college community.",
       },
-      { property: "og:title", content: "Campus Marketplace — Buy, Sell & Exchange on Campus" },
+      { property: "og:title", content: "CampusXchange — Buy, Sell & Exchange on Campus" },
       {
         property: "og:description",
         content:

@@ -21,9 +21,9 @@ import { formatPrice, timeAgo } from "@/lib/marketplace";
 export const Route = createFileRoute("/_authenticated/admin")({
   head: () => ({
     meta: [
-      { title: "Admin panel — Campus Marketplace" },
+      { title: "Admin panel — CampusXchange" },
       { name: "description", content: "Moderate listings, review reports and monitor marketplace activity." },
-      { property: "og:title", content: "Admin panel — Campus Marketplace" },
+      { property: "og:title", content: "Admin panel — CampusXchange" },
       { property: "og:description", content: "Marketplace moderation and analytics." },
     ],
   }),

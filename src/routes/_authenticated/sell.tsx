@@ -22,12 +22,12 @@ import { useAuth } from "@/hooks/useAuth";
 export const Route = createFileRoute("/_authenticated/sell")({
   head: () => ({
     meta: [
-      { title: "Sell an item — Campus Marketplace" },
+      { title: "Sell an item — CampusXchange" },
       {
         name: "description",
         content: "List your books, gadgets or hostel gear for other students in minutes.",
       },
-      { property: "og:title", content: "Sell an item — Campus Marketplace" },
+      { property: "og:title", content: "Sell an item — CampusXchange" },
       { property: "og:description", content: "Create a free student listing in under a minute." },
     ],
   }),

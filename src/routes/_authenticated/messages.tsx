@@ -21,9 +21,9 @@ export const Route = createFileRoute("/_authenticated/messages")({
   }),
   head: () => ({
     meta: [
-      { title: "Messages — Campus Marketplace" },
+      { title: "Messages — CampusXchange" },
       { name: "description", content: "Chat with buyers and sellers about campus listings." },
-      { property: "og:title", content: "Messages — Campus Marketplace" },
+      { property: "og:title", content: "Messages — CampusXchange" },
       { property: "og:description", content: "Arrange meet-ups and ask questions before you buy." },
     ],
   }),

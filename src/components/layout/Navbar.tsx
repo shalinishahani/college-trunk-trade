@@ -60,11 +60,13 @@ export function Navbar() {
     <header className="glass sticky top-0 z-50 w-full border-b">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4">
         <Link to="/" className="flex shrink-0 items-center gap-2">
-          <span className="gradient-brand grid size-9 place-items-center rounded-xl text-primary-foreground shadow-soft">
-            <Package className="size-5" />
-          </span>
+          <img
+            src="/campusxchange-icon.png"
+            alt="CampusXchange Logo"
+            className="size-9 rounded-xl object-contain shadow-soft"
+          />
           <span className="font-display text-lg font-extrabold tracking-tight">
-            Campus<span className="gradient-text">Market</span>
+            Campus<span className="gradient-text">Xchange</span>
           </span>
         </Link>
 
@@ -176,7 +178,7 @@ export function Navbar() {
           ) : (
             <div className="hidden items-center gap-2 sm:flex">
               <Button variant="ghost" asChild>
-                <Link to="/auth">Sign in</Link>
+                <Link to="/auth" search={{ mode: "login" }}>Sign in</Link>
               </Button>
               <Button asChild className="rounded-full">
                 <Link to="/auth" search={{ mode: "register" }}>
@@ -214,7 +216,7 @@ export function Navbar() {
                   </>
                 ) : (
                   <Button asChild className="mt-3 rounded-full">
-                    <Link to="/auth">Sign in</Link>
+                    <Link to="/auth" search={{ mode: "login" }}>Sign in</Link>
                   </Button>
                 )}
               </div>
